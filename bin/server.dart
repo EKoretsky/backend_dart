@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:backend_dart/cli_commands/cli_parser.dart';
 import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_router/shelf_router.dart';
@@ -10,8 +9,6 @@ final _host = 'localhost';
 
 void main(List<String> args) async {
   
-  final parser = CliParser().parser;
-  final result = parser.parse(args);
 
   final pipeline = shelf.Pipeline();
   pipeline.addMiddleware(shelf.logRequests());
